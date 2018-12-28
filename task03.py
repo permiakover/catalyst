@@ -1,13 +1,25 @@
-# 3. Сформировать из введенного числа обратное по порядку входящих в него цифр и вывести на экран.
-a = int(input('Введи натуральное число - '))
-atmp = a
-vsa = 0
-tmp = 0
+# 3. В массиве случайных целых чисел поменять местами минимальный и максимальный элементы.
 
-while atmp > 0:
-    tmp = atmp % 10
-    atmp = atmp // 10
-    vsa *= 10
-    vsa = vsa + tmp
+import random
 
-print('Инвертированное число - ', vsa)
+size = 15
+min_item = 0
+max_item = 100
+array = [random.randint(min_item, max_item) for _ in range(size)]
+
+min_ = 0
+max_ = 0
+
+for i in range(size):
+    if array[i] < array[min_]:
+        min_ = i
+    elif array[i] > array[max_]:
+        max_ = i
+print('Исходный массив:')
+print(array)
+print('\nМассив, в котором минимальное и максимальное значение поменяны местами (нумерация с 1):')
+print('Замена позиций ', min_+1, ' и ', max_+1)
+tmp = array[min_]
+array[min_] = array[max_]
+array[max_] = tmp
+print(array)
