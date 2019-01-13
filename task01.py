@@ -83,7 +83,7 @@ def progress3(n):
 def progress4(n):
     b0 = 1
     st = -0.5
-    sum_ = b0 * (1--st**n)/(1 - st)
+    sum_ = b0 * (1-st**n)/(1 - st)
     return sum_
 
 #cProfile.run('progress4(10000000)')
